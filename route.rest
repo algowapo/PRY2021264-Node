@@ -18,11 +18,11 @@ Content-Type: application/json
 DELETE http://localhost:3000/users/6155294cccd8101444f8ae02
 
 ### EDIT User
-PATCH http://localhost:3000/users/61539daab66154ccfb1ffc41
+PATCH http://localhost:3000/users/6153a888926373d988abcbec
 Content-Type: application/json
 
 {
-  "username": "rodrigo1"
+  "username": "TheRoro@gmail.com"
 }
 
 ### LOGIN

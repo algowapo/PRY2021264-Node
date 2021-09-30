@@ -10,10 +10,6 @@ router.get('/', async (req, res) => {
 		res.status(500).json({ message: err.message })
 	}
 })
-// Get One
-router.get('/:id', getUser, (req, res) => {
-	res.json(res.user)
-})
 // Create One
 router.post('/', async (req, res) => {
 	const user = new UserModel({
@@ -30,6 +26,14 @@ router.post('/', async (req, res) => {
 	} else {
 		res.status(403).json({ message: 'User already exists' })
 	}
+})
+// Login
+router.post('/login', login, async (req, res) => {
+	res.json(res.user)
+})
+// Get One
+router.get('/:id', getUser, (req, res) => {
+	res.json(res.user)
 })
 // Update One
 router.patch('/:id', getUser, async (req, res) => {
@@ -54,11 +58,6 @@ router.delete('/:id', getUser, async (req, res) => {
 	} catch (e) {
 		res.status(400).json({ message: e.message })
 	}
-})
-
-// Login
-router.post('/login', login, async (req, res) => {
-	res.json(res.user)
 })
 
 async function getUser(req, res, next) {

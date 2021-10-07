@@ -9,13 +9,12 @@ POST http://localhost:3000/users/
 Content-Type: application/json
 
 {
-  "username": "rodrigo3",
+  "username": "rodrigo123@gmail.com",
   "password": "654321"
 }
 
-
 ### DELETE User
-DELETE http://localhost:3000/users/6155294cccd8101444f8ae02
+DELETE http://localhost:3000/users/615d12ead62c20fd5594c804
 
 ### EDIT User
 PATCH http://localhost:3000/users/6153a888926373d988abcbec
@@ -32,4 +31,62 @@ Content-Type: application/json
 {
   "username": "rodrigo1",
   "password": "12345"
+}
+
+
+
+
+
+
+
+
+
+### GET ALL PRODUCTS by userId
+GET http://localhost:3000/users/61539daab66154ccfb1ffc41/products
+
+### GET Product by id and userId
+GET http://localhost:3000/users/NON_NECESSARY_PARAM/products/615f76b068373499f4682282
+
+### EDIT Product by id and userId
+PATCH http://localhost:3000/users/NON_NECESSARY_PARAM/products/615f76b068373499f4682282
+Content-Type: application/json
+
+{
+  "date": "2014-01-01T23:28:56.782Z"
+}
+
+### DELETE Product by userId and productId
+DELETE http://localhost:3000/users/61539daab66154ccfb1ffc41/products/615e19fe43ed16ee025ca430
+
+### DELETE All Products by userId
+DELETE http://localhost:3000/users/61539daab66154ccfb1ffc41/products
+
+### Add Massive
+POST http://localhost:3000/users/61539daab66154ccfb1ffc41/massive/
+Content-Type: application/json
+
+[
+  {
+    "name": "Fideos Lavagi",
+    "color": "amarillo",
+    "price": 8.80,
+    "date": "02/07/2020"
+  },
+  {
+    "name": "Fideos Rojos",
+    "color": "rojo",
+    "price": 7.80,
+    "date": "03/03/2020"
+  }
+]
+
+### CREATE Product by userId
+POST http://localhost:3000/users/61539daab66154ccfb1ffc41/products/
+Content-Type: application/json
+
+{
+  "name": "Pringles",
+  "color": "amarillas",
+  "price": "arstarst",
+  "date": "2011-03-02T23:28:56.782Z"
 }

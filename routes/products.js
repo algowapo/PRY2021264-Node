@@ -57,6 +57,26 @@ router.patch('/:userId/products/:id', getProduct, async (req, res) => {
 	}
 })
 
+// Update ALL
+router.patch('/:userId/products/', async (req, res) => {
+	let productsObject = await getProductsByUserId(req.params.userId)
+	let products = productsObject.products
+	for (let i = 0; i < products.length; i++) {
+		const product = products[i]
+		try {
+			await ProductModel.findByIdAndUpdate(product._id, {
+				name: req.body.name,
+				price: req.body.price,
+				color: req.body.color,
+				date: req.body.date,
+			})
+		} catch (e) {
+			res.status(400).json({ message: e.message })
+		}
+	}
+	res.json(req.body)
+})
+
 // Delete one
 router.delete('/:userId/products/:id', async (req, res) => {
 	UserModel.findByIdAndUpdate(

@@ -55,6 +55,18 @@ Content-Type: application/json
   "date": "2014-01-01T23:28:56.782Z"
 }
 
+### EDIT ALL Products by userId
+PATCH http://localhost:3000/users/61539daab66154ccfb1ffc41/products/
+Content-Type: application/json
+
+{
+  "name": "Huevos La calera",
+  "color": "rosados",
+  "price": 10.50,
+  "date": "02/07/2018"
+}
+
+
 ### DELETE Product by userId and productId
 DELETE http://localhost:3000/users/61539daab66154ccfb1ffc41/products/615e19fe43ed16ee025ca430
 
